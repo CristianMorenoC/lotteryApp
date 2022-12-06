@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotery App</title>
+    <title>Loteria</title>
+    <link rel="icon" href="./imgs/clover.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&family=Roboto:wght@400;700&family=Work+Sans:wght@300;400;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <section>
         <div class="title">
-            <h1>INTRODUCIR NUMEROS</h1>
+            <h1>Digite o número vencedor</h1>
         </div>
         <div class="inputs-container">
             <input 
@@ -59,23 +65,29 @@
             >
         </div>
         <div class="input-quantity-container">
-            <label for="quantity">Numero de combinaciones a generar</label>
+            <label for="quantity">Número de combinações para gerar</label>
             <input type="number" name="quantity" id="input-quantity" value="200">
         </div>
         <div class="button-generate-container">
-            <button onclick="generate()">Generar numeros</button>
-            <button onclick="location.reload()">Limpiar</button>
-            <button id="button-random-number" disabled onclick="randomNumber()">Generar otros numeros</button>
+            <div>
+                <button onclick="generate()">Gerar números semelhantes</button>
+            </div>
+            <div>
+                <button id="button-random-number" disabled onclick="randomNumber()">Gerar outros números</button>
+            </div>
+            <div>
+                <button onclick="location.reload()">Limpar</button>
+            </div>
         </div>
     </section>
     <section>
         <div id="list-numbers">
-            
+            <h2 id="title-list-numbers"></h2>
         </div>
     </section>
     <section>
         <div id="number-list-random">
-
+            <h2 id="title-number-list-random"></h2>
         </div>
     </section>
     <script src="./main.js"></script>

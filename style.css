@@ -1,3 +1,9 @@
+:root {
+    --text-color: #ffff;
+    --background-color: #1A1A1A;
+    --main-color: #8db600;
+}
+
 *
 {
     margin: 0;
@@ -6,7 +12,12 @@
 }
 
 body {
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 2rem;
+    color: var(--text-color);
+    background: var(--background-color);
 }
 
 input::-webkit-outer-spin-button,
@@ -37,15 +48,16 @@ input[type=number] {
 }
 
 .inputs-container > input {
+    text-align: center;
     padding: 5px 10px;
     font-size: 1.5rem;
     border-radius: 20px;
     outline: none;
-    border: 2px solid black;
+    border: 3px solid black;
 }
 
 .inputs-container>input:focus {
-    border: 2px solid blue;
+    border: 3px solid var(--main-color);
 }
 
 .input-quantity-container {
@@ -57,34 +69,76 @@ input[type=number] {
     margin: 20px 0;
 }
 
+.input-quantity-container > label {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 #input-quantity {
     padding: 10px;
     border-radius: 10px;
-    border: 2px solid black;
+    border: 3px solid black;
     outline: none;
 }
 
 #input-quantity:focus {
-    border: 2px solid blue;
+    border: 3px solid var(--main-color);
 }
 
 .button-generate-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
-.button-generate-container > button {
+.button-generate-container > div > button {
+    border: none;
     padding: 10px 15px;
     border-radius: 10px;
+    background: var(--main-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
 
+.button-generate-container>div>button:hover {
+    background: #a5d409;
 }
 
 #list-numbers {
     font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
 }
 
 #list-numbers > div {
+    width: 50px;
+    border: solid 1px var(--text-color);
+}
+
+#number-list-random {
+    font-size: 1rem;
     display: flex;
-    /* width: 50%; */
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+#number-list-random > h2 {
+    margin: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+#list-numbers > h2 {
+    margin: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+#number-list-random > div {
+    width: 50px;
+    border: solid 1px var(--text-color);
 }

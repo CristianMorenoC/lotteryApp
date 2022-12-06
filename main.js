@@ -12,6 +12,8 @@ const inputQuantity = document.querySelector('#input-quantity')
 
 const listNumber = document.getElementById('list-numbers')
 const randomNumbers = document.getElementById('number-list-random')
+const titleNumberList = document.getElementById('title-list-numbers')
+const titleRandomNumbers = document.getElementById('title-number-list-random')
 
 const randomNumberButton = document.getElementById('button-random-number')
 
@@ -91,6 +93,7 @@ const generate = () => {
     combinateNumbers(input1.value, input2.value, input3.value, input4.value)
     lotteryNumbers.forEach((combination, index) => {
           if(Number(index < inputQuantity.value)){
+               titleNumberList.innerText = 'Números semelhantes'
                const row = document.createElement('div')
                const rowContent = document.createElement('span')
                let numbers = ''
@@ -109,24 +112,40 @@ const generate = () => {
 const randomNumber = () => {
      const limit = 10000
      for (let i = 0; i < limit; i++) {
+          titleRandomNumbers.innerText = 'Resto de numeros'
           const row = document.createElement('div')
+          row.setAttribute('id', `${i}`)
           const rowContent = document.createElement('span')
-          const numberFromZeroToTen = `000${i}`
-          const numberFromTenToOneHoundred = `00${i}`
-          const numberFromOneHoundredToOneThousand = `0${i}`
-          const numberBeforeTenThousand = `${i}`
-          if(!arrNumbers.includes(numberFromZeroToTen)){
-               if(i >= 0) rowContent.innerText = numberFromZeroToTen
+          const digitsQuantity = i.toString().split('').length
+          let oneDigitNumber = ''
+          let twoDigitNumber = ''
+          let threeDigitNumber = ''
+          let fourDigitNumber = ''
+          if (digitsQuantity === 1) {
+               oneDigitNumber = `000${i}`
           }
-          if(!arrNumbers.includes(numberFromTenToOneHoundred)){
-               if(i >= 10) rowContent.innerText = numberFromTenToOneHoundred
+          if (digitsQuantity === 2) {
+               twoDigitNumber = `00${i}`
           }
-          if(!arrNumbers.includes(numberFromOneHoundredToOneThousand)){
-               if(i >= 100) rowContent.innerText = numberFromOneHoundredToOneThousand
+          if (digitsQuantity === 3) {
+               threeDigitNumber = `0${i}`
           }
-          if(!arrNumbers.includes(numberBeforeTenThousand)){
-               if(i >= 1000) rowContent.innerText = numberBeforeTenThousand
+          if (digitsQuantity === 4) {
+               fourDigitNumber = `${i}`
           }
+          if(!arrNumbers.includes(oneDigitNumber)){
+               if(i >= 0) rowContent.innerText = oneDigitNumber
+          }
+          if(!arrNumbers.includes(twoDigitNumber)){
+               if(i >= 10) rowContent.innerText = twoDigitNumber
+          }
+          if(!arrNumbers.includes(threeDigitNumber)){
+               if(i >= 100) rowContent.innerText = threeDigitNumber
+          }
+          if(!arrNumbers.includes(fourDigitNumber)){
+               if(i >= 1000) rowContent.innerText = fourDigitNumber
+          }
+          if(rowContent.innerHTML === '') row.style.display = 'none'
           row.appendChild(rowContent)
           randomNumbers.appendChild(row)
      }
