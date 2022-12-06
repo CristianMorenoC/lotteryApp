@@ -1,0 +1,90 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 2rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    /* Firefox */
+}
+
+.title {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.inputs-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.inputs-container > input {
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    outline: none;
+    border: 2px solid black;
+}
+
+.inputs-container>input:focus {
+    border: 2px solid blue;
+}
+
+.input-quantity-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#input-quantity {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    outline: none;
+}
+
+#input-quantity:focus {
+    border: 2px solid blue;
+}
+
+.button-generate-container {
+    display: flex;
+    justify-content: center;
+}
+
+.button-generate-container > button {
+    padding: 10px 15px;
+    border-radius: 10px;
+
+}
+
+#list-numbers {
+    font-size: 1rem;
+}
+
+#list-numbers > div {
+    display: flex;
+    /* width: 50%; */
+    justify-content: center;
+}
